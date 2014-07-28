@@ -56,10 +56,10 @@ public class bartMachineClassification extends bartMachineRegression {
 	private double SampleZi(double g_x_i, double y_i) {
 		double u = StatToolbox.rand();
 		if (y_i == 1){ 
-			return g_x_i + StatUtil.getInvCDF((1 - u) * StatToolbox.normal_cdf(-g_x_i) + u, false);
+			return g_x_i + StatUtil.getInvCDF((1 - u) * StatToolbox.normal_cdf(-g_x_i) + u, true);
 		} 
 		else if (y_i == 0){
-			return g_x_i - StatUtil.getInvCDF((1 - u) * StatToolbox.normal_cdf(g_x_i) + u, false);
+			return g_x_i - StatUtil.getInvCDF((1 - u) * StatToolbox.normal_cdf(g_x_i) + u, true);
 		}
 		System.err.println("SampleZi RESPONSE NOT ZERO / ONE");
 		System.exit(0);
